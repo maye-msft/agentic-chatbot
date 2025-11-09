@@ -1,0 +1,113 @@
+[project]
+name = "monorepo-python-template"
+version = "0.1.0"
+description = "Monorepo Python Template"
+authors = [
+    {name = "Your Name",email = "your.email@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.poetry]
+name = "monorepo-python-template"
+version = "0.1.0"
+description = "Monorepo Python Template"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+pytest-asyncio = "^0.25.3"
+pytest-cov = "^4.1.0"
+black = "^23.3.0"
+ruff = "^0.1.7"
+mypy = "^1.0.0"
+pydoclint = "^0.6.0"
+pymarkdownlnt = "^0.9.0"
+yamllint = "^1.32.0"
+pre-commit = "^4.2.0"
+
+# Subproject dependency groups will be added by create_python_subproject.sh
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+exclude = '''
+/(
+    \.git
+    | \.venv
+)/
+'''
+extend-exclude = ".*/*.ipynb|.*/*.xls"
+
+[tool.ruff]
+lint.select = ["E", "F", "B", "D", "I"]
+lint.ignore = ["D104", "D107", "D203", "D205", "D212", "D401", "D406", "D407"]
+lint.fixable = ["E", "F", "B", "I"]
+line-length = 120
+target-version = "py310"
+exclude = [
+    "__pycache__",
+    ".ruff_cache",
+    ".mypy_cache",
+    ".pytest_cache",
+    "*.log",
+    ".venv",
+]
+
+[tool.pydoclint]
+style = "google"
+check-return = true
+check-arg-order = true
+exclude = "(__pycache__|\\.ruff_cache|\\.mypy_cache|\\.pytest_cache|\\.venv|.*\\.log)"
+
+[tool.mypy]
+disallow_untyped_defs = true
+ignore_missing_imports = true
+show_error_codes = true
+disable_error_code = ["name-defined", "arg-type", "dict-item"]
+explicit_package_bases = true
+exclude = "(__pycache__|\\.ruff_cache|\\.mypy_cache|\\.pytest_cache|\\.venv|.*\\.log)"
+
+[tool.pymarkdown]
+plugins.MD013.enabled = false
+plugins.MD024.enabled = false
+plugins.MD036.enabled = false
+plugins.MD037.enabled = false
+plugins.MD033 = { allowed_elements = ["br"] }
+
+[tool.yamllint]
+extends = "default"
+ignore = [
+    "__pycache__",
+    ".ruff_cache",
+    ".pytest_cache",
+    ".mypy_cache",
+    "*.log",
+    ".venv",
+]
+
+[tool.yamllint.rules]
+line-length.disable = true
+document-start.disable = true
+comments-indentation.disable = true
+truthy.disable = true
+
+[tool.coverage.run]
+omit = [
+    "*/__init__.py",
+    "*/__pycache__/*",
+    "*/tests/*",
+    "*/.venv/*",
+    "*/.ruff_cache/*",
+    "*/.mypy_cache/*",
+    "*/.pytest_cache/*",
+    "*.log"
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
