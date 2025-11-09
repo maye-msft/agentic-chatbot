@@ -3,7 +3,7 @@ mode: 'agent'
 description: 'Add a library to a specific subproject using Poetry'
 ---
 
-# Add Library to Subproject
+## Add Library to Subproject
 
 I'll help you add a library/package to a specific subproject in this monorepo using Poetry.
 
@@ -22,7 +22,9 @@ When the user wants to add a library to a subproject:
    - Version format should be semantic versioning if provided
 
 3. **Execute the add library script:**
+
    Run the following command with the collected inputs:
+
    ```bash
    ./scripts/add_library.sh {subproject_name} {library_name} [version]
    ```
@@ -42,26 +44,32 @@ When the user wants to add a library to a subproject:
 
 ## Example Interactions
 
-### Basic library addition:
+### Basic library addition
+
 User: "Add requests to my_api"
 
 Copilot should:
+
 1. Extract: subproject=`my_api`, library=`requests`
 2. Run: `./scripts/add_library.sh my_api requests`
 3. Confirm successful addition
 
-### With specific version:
+### With specific version
+
 User: "Add pandas version 2.0.0 to the analytics subproject"
 
 Copilot should:
+
 1. Extract: subproject=`analytics`, library=`pandas`, version=`2.0.0`
 2. Run: `./scripts/add_library.sh analytics pandas 2.0.0`
 3. Confirm successful addition
 
-### Interactive mode:
+### Interactive mode
+
 User: "I need to add a library"
 
 Copilot should:
+
 1. Ask which subproject (list available ones if helpful)
 2. Ask which library to add
 3. Ask if a specific version is needed (optional)
@@ -71,6 +79,7 @@ Copilot should:
 ## Common Libraries by Subproject Type
 
 Suggest these based on subproject type:
+
 - **CLI applications**: `click`, `typer`, `rich`, `colorama`
 - **Web UI**: `streamlit`, `gradio`, `dash`, `plotly`
 - **API services**: `fastapi`, `flask`, `uvicorn`, `pydantic`
@@ -80,6 +89,7 @@ Suggest these based on subproject type:
 ## Error Handling
 
 If the script fails, check for:
+
 - Subproject doesn't exist → Suggest creating it first with `/monorepo-create-subproject`
 - Poetry group missing → The script will show how to fix it
 - Library not found → Verify the package name on PyPI

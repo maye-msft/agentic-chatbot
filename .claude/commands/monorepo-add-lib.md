@@ -9,6 +9,7 @@ I'll help you add Python packages to specific subprojects using Poetry's depende
 ```
 
 Examples:
+
 ```bash
 ./scripts/add_library.sh api_service fastapi
 ./scripts/add_library.sh analytics pandas 2.0.0
@@ -18,6 +19,7 @@ Examples:
 ## Common Libraries by Type
 
 ### 🌐 API Development
+
 ```bash
 # FastAPI stack
 ./scripts/add_library.sh api_service fastapi
@@ -37,6 +39,7 @@ Examples:
 ```
 
 ### 📊 Data Processing
+
 ```bash
 # Core data tools
 ./scripts/add_library.sh data_pipeline pandas
@@ -55,6 +58,7 @@ Examples:
 ```
 
 ### 🖥️ CLI Applications
+
 ```bash
 # CLI frameworks
 ./scripts/add_library.sh cli_app click
@@ -69,6 +73,7 @@ Examples:
 ```
 
 ### 🌐 Web UI
+
 ```bash
 # Streamlit stack
 ./scripts/add_library.sh web_ui streamlit
@@ -85,6 +90,7 @@ Examples:
 ```
 
 ### 🧪 Testing & Quality
+
 ```bash
 # Testing
 ./scripts/add_library.sh any_project pytest-asyncio
@@ -98,6 +104,7 @@ Examples:
 ```
 
 ### 🔧 Utilities
+
 ```bash
 # HTTP clients
 ./scripts/add_library.sh utils requests
@@ -117,14 +124,17 @@ Examples:
 ## After Adding Libraries
 
 1. **Install the dependencies**:
+
    ```bash
    poetry install --with <subproject>
    ```
 
 2. **If DevContainer is running**, rebuild it:
+
    - Press F1 → "Dev Containers: Rebuild Container"
 
 3. **Import in your code**:
+
    ```python
    import fastapi  # or whatever you added
    ```
@@ -144,24 +154,28 @@ grep "\[tool.poetry.group.<subproject>.dependencies\]" -A 10 pyproject.toml
 
 ## Troubleshooting
 
-### If the script fails:
+### If the script fails
 
 1. **Check subproject exists**:
+
    ```bash
    ls -d <subproject>/
    ```
 
 2. **Verify Poetry group exists**:
+
    ```bash
    grep "\[tool.poetry.group.<subproject>\]" pyproject.toml
    ```
 
 3. **Add manually if needed**:
+
    ```bash
    poetry add <library> --group <subproject>
    ```
 
 4. **Clear Poetry cache**:
+
    ```bash
    poetry cache clear pypi --all
    ```

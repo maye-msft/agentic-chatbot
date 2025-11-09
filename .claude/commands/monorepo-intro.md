@@ -1,7 +1,8 @@
 # Monorepo Python Template - Quick Reference
 
 ## 📂 Repository Structure
-```
+
+```text
 monorepo-python-template/
 ├── scripts/             # Automation scripts
 │   ├── create_python_subproject.sh  # Create new subprojects
@@ -15,18 +16,21 @@ monorepo-python-template/
 ## 🚀 Essential Commands
 
 ### Create New Subproject
+
 ```bash
 ./scripts/create_python_subproject.sh
 # Interactive prompts for name, description, tests
 ```
 
 ### Add Library
+
 ```bash
 ./scripts/add_library.sh <subproject> <library> [version]
 # Example: ./scripts/add_library.sh api_service fastapi
 ```
 
 ### Code Quality
+
 ```bash
 make lint-all      # Fix all code issues
 make check-all     # Check without fixing

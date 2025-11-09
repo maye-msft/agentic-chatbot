@@ -3,13 +3,13 @@ mode: 'ask'
 description: 'Learn how to use the Monorepo Python Template'
 ---
 
-# Monorepo Python Template - Quick Guide
+## Monorepo Python Template - Quick Guide
 
 This template helps you manage multiple Python applications in a single repository with shared utilities and consistent development environments.
 
 ## Repository Structure
 
-```
+```text
 monorepo-python-template/
 ├── scripts/             # Automation scripts
 │   ├── create_python_subproject.sh  # Create new subprojects
@@ -23,12 +23,14 @@ monorepo-python-template/
 ## Available Scripts
 
 ### 1. Create New Subproject
+
 ```bash
 ./scripts/create_python_subproject.sh
 # Enter: name, description, add tests (y/n)
 ```
 
 ### 2. Add Library to Subproject
+
 ```bash
 ./scripts/add_library.sh <subproject> <library> [version]
 # Example: ./scripts/add_library.sh my_api requests
@@ -42,8 +44,9 @@ Use these in Copilot chat:
 - `/monorepo-create-subproject` - Create new subproject interactively
 - `/monorepo-add-library` - Add dependencies to subprojects
 
-### Quick Examples:
-```
+### Quick Examples
+
+```text
 # In Copilot chat:
 /monorepo-create-subproject
 "Create a subproject called api_service"

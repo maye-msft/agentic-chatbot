@@ -17,7 +17,7 @@ make lint-all
 
 ## 📂 Project Structure
 
-```
+```text
 project-name/
 ├── subproject1/        # [Description of subproject1]
 ├── subproject2/        # [Description of subproject2]
@@ -29,16 +29,19 @@ project-name/
 ## 🛠️ Development
 
 ### Create New Subproject
+
 ```bash
 ./scripts/create_python_subproject.sh
 ```
 
 ### Add Dependencies
+
 ```bash
 ./scripts/add_library.sh <subproject> <library>
 ```
 
 ### Use DevContainers
+
 1. Open in VS Code
 2. Press `F1` → "Dev Containers: Reopen in Container"
 3. Select your subproject

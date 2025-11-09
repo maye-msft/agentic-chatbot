@@ -35,7 +35,7 @@ This template provides a structured approach to building Python monorepos, where
 
 ## 🏗️ Repository Structure
 
-```
+```text
 monorepo-python-template/
 ├── .azuredevops/          # CI/CD pipeline configuration
 │   └── qa_pipeline.yaml   # Quality assurance pipeline
@@ -69,6 +69,7 @@ monorepo-python-template/
 ### Getting Started
 
 1. **Use as Template or Clone**
+
    ```bash
    # Option 1: Use GitHub's "Use this template" button
    # Option 2: Clone directly
@@ -77,11 +78,13 @@ monorepo-python-template/
    ```
 
 2. **Install Base Dependencies**
+
    ```bash
    poetry install --with dev
    ```
 
 3. **Create Your First Subproject**
+
    ```bash
    ./scripts/create_python_subproject.sh
    # Interactive prompts will guide you through:
@@ -102,6 +105,7 @@ monorepo-python-template/
 **Script:** `scripts/create_python_subproject.sh`
 
 **What it creates:**
+
 - Project directory with `__init__.py` and `hello_world.py`
 - DevContainer configuration for isolated development
 - Poetry dependency group in `pyproject.toml`
@@ -110,6 +114,7 @@ monorepo-python-template/
 - CI/CD pipeline steps (if tests are included)
 
 **Usage:**
+
 ```bash
 # Interactive mode
 ./scripts/create_python_subproject.sh
@@ -121,7 +126,8 @@ monorepo-python-template/
 ```
 
 **Example Output:**
-```
+
+```text
 ✅ Python subproject 'api_service' created successfully!
 - Location: ./api_service
 - DevContainer: .devcontainer/api_service/
@@ -138,6 +144,7 @@ monorepo-python-template/
 **Purpose:** Add Python packages to specific subprojects using Poetry's dependency groups.
 
 **Usage:**
+
 ```bash
 # Add latest version
 ./scripts/add_library.sh <subproject> <library>
@@ -147,6 +154,7 @@ monorepo-python-template/
 ```
 
 **Examples:**
+
 ```bash
 # Add FastAPI to api_service subproject
 ./scripts/add_library.sh api_service fastapi
@@ -166,10 +174,12 @@ This template includes custom Copilot prompts to streamline your workflow. Use t
 ### Available Prompts
 
 #### `/monorepo-admin`
+
 **Purpose:** Intelligent assistant that understands your intent and manages tasks
 
 **Usage:**
-```
+
+```text
 # Natural language requests
 "I need to build a REST API"
 "Add pandas to my analytics project"
@@ -178,6 +188,7 @@ This template includes custom Copilot prompts to streamline your workflow. Use t
 ```
 
 **Capabilities:**
+
 - Understands natural language and chooses appropriate actions
 - Creates subprojects based on your description
 - Manages dependencies intelligently
@@ -185,25 +196,30 @@ This template includes custom Copilot prompts to streamline your workflow. Use t
 - Provides proactive suggestions for next steps
 
 #### `/monorepo-intro`
+
 **Purpose:** Display a quick reference guide for the template
 
 **Usage:**
-```
+
+```text
 # In Copilot chat, type:
 /monorepo-intro
 ```
 
 **What it shows:**
+
 - Repository structure overview
 - Available scripts and their usage
 - Essential Make commands
 - Key concepts and quick start steps
 
 #### `/monorepo-create-subproject`
+
 **Purpose:** Interactive subproject creation with intelligent defaults
 
 **Usage:**
-```
+
+```text
 # Basic usage
 /monorepo-create-subproject
 
@@ -213,16 +229,19 @@ This template includes custom Copilot prompts to streamline your workflow. Use t
 ```
 
 **Features:**
+
 - Auto-generates description if not provided
 - Defaults to including tests (best practice)
 - Validates naming conventions
 - Executes the creation script automatically
 
 #### `/monorepo-add-library`
+
 **Purpose:** Add dependencies to specific subprojects
 
 **Usage:**
-```
+
+```text
 # Interactive mode
 /monorepo-add-library
 
@@ -233,6 +252,7 @@ This template includes custom Copilot prompts to streamline your workflow. Use t
 ```
 
 **Smart Features:**
+
 - Suggests common libraries based on subproject type:
   - CLI apps: `click`, `typer`, `rich`
   - APIs: `fastapi`, `flask`, `uvicorn`

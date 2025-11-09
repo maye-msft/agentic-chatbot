@@ -34,3 +34,6 @@ steps:
     displayName: "Run Linters"
 
   # Subproject-specific test steps will be added by create_python_subproject.sh
+  - script: |
+      make test-core-coverage
+    displayName: "Run core tests"

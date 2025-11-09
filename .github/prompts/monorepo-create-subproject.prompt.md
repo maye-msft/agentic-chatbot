@@ -3,7 +3,7 @@ mode: 'agent'
 description: 'Create a new Python subproject using the automated script'
 ---
 
-# Create a New Python Subproject
+## Create a New Python Subproject
 
 I'll help you create a new Python subproject in this monorepo using the automated creation script.
 
@@ -28,7 +28,9 @@ When the user wants to create a new subproject:
    - Convert the tests choice to lowercase 'y' or 'n'
 
 3. **Execute the creation script:**
+
    Run the following command with the collected inputs:
+
    ```bash
    echo -e "{subproject_name}\n{description}\n{add_tests}" | ./scripts/create_python_subproject.sh
    ```
@@ -55,20 +57,24 @@ When the user wants to create a new subproject:
 
 ## Example Interactions
 
-### Full interaction:
+### Full interaction
+
 User: "I want to create a new subproject for data analytics"
 
 Copilot should:
+
 1. Ask for the subproject name (suggest: `analytics` or `data_analytics`)
 2. Ask for a description (optional - will generate if not provided)
 3. Ask if tests should be included (optional - defaults to yes)
 4. Run: `echo -e "analytics\nData analytics and visualization tools\ny" | ./scripts/create_python_subproject.sh`
 5. Show the created files and next steps
 
-### Minimal interaction:
+### Minimal interaction
+
 User: "Create a subproject called auth_service"
 
 Copilot should:
+
 1. Use the provided name: `auth_service`
 2. Generate description: "Auth service module"
 3. Default to including tests: `y`
@@ -78,6 +84,7 @@ Copilot should:
 ## Quick Commands
 
 If the user provides partial or full information, process accordingly:
+
 - "Create subproject api_service" → Generate description, default to tests
 - "Create api_service for REST API" → Use "REST API" as description, default to tests
 - "Create api_service for REST API service with tests" → Use all provided info

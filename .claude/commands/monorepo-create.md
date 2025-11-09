@@ -5,18 +5,20 @@ I'll help you create a new Python subproject with all the necessary structure an
 ## Quick Create
 
 To create a subproject, run:
+
 ```bash
 ./scripts/create_python_subproject.sh
 ```
 
 You'll be prompted for:
+
 1. **Name**: Use lowercase with underscores (e.g., `api_service`, `data_processor`)
 2. **Description**: Brief description (or press Enter to auto-generate)
 3. **Tests**: Include test setup? (y/n, recommend: y)
 
 ## What Gets Created
 
-```
+```text
 your_subproject/
 ├── __init__.py           # Package initialization
 ├── hello_world.py        # Starter code
@@ -31,6 +33,7 @@ your_subproject/
 ```
 
 Plus updates to:
+
 - `pyproject.toml` - New Poetry dependency group
 - `Makefile` - Lint and test targets
 - `.azuredevops/qa_pipeline.yaml` - CI/CD steps (if tests included)
@@ -38,6 +41,7 @@ Plus updates to:
 ## Common Subproject Types
 
 ### 🌐 API Service
+
 ```bash
 echo -e "api_service\nREST API service\ny" | ./scripts/create_python_subproject.sh
 
@@ -48,6 +52,7 @@ echo -e "api_service\nREST API service\ny" | ./scripts/create_python_subproject.
 ```
 
 ### 📊 Data Pipeline
+
 ```bash
 echo -e "data_pipeline\nData processing pipeline\ny" | ./scripts/create_python_subproject.sh
 
@@ -58,6 +63,7 @@ echo -e "data_pipeline\nData processing pipeline\ny" | ./scripts/create_python_s
 ```
 
 ### 🖥️ CLI Application
+
 ```bash
 echo -e "cli_app\nCommand line application\ny" | ./scripts/create_python_subproject.sh
 
@@ -68,6 +74,7 @@ echo -e "cli_app\nCommand line application\ny" | ./scripts/create_python_subproj
 ```
 
 ### 🌐 Web UI
+
 ```bash
 echo -e "web_ui\nWeb user interface\ny" | ./scripts/create_python_subproject.sh
 
@@ -78,6 +85,7 @@ echo -e "web_ui\nWeb user interface\ny" | ./scripts/create_python_subproject.sh
 ```
 
 ### 🔧 Shared Utilities
+
 ```bash
 echo -e "common\nShared utilities and helpers\ny" | ./scripts/create_python_subproject.sh
 
@@ -89,19 +97,23 @@ echo -e "common\nShared utilities and helpers\ny" | ./scripts/create_python_subp
 ## After Creation
 
 1. **Open in DevContainer**:
+
    - Press F1 → "Dev Containers: Reopen in Container"
    - Select your new subproject
 
 2. **Install Dependencies**:
+
    ```bash
    poetry install --with your_subproject
    ```
 
 3. **Start Coding**:
+
    - Edit `your_subproject/hello_world.py`
    - Run: `poetry run python your_subproject/hello_world.py`
 
 4. **Run Tests**:
+
    ```bash
    make test-your_subproject
    make test-your_subproject-coverage

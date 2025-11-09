@@ -35,7 +35,7 @@ sed "s/{{SUBPROJECT}}/$SUBPROJECT/g; s/{{DESCRIPTION}}/$DESCRIPTION/g" \
 if [ "$ADD_TESTS" == "y" ]; then
     # 4a. Create a test directory and test file
     mkdir -p "$PROJECT_DIR/tests"
-    cp "$TEMPLATE_DIR/test_sample.py" "$PROJECT_DIR/tests/test_sample.py"
+    cp "$TEMPLATE_DIR/test_sample.py.tpl" "$PROJECT_DIR/tests/test_sample.py"
 
     # 4b. Add a test script in the Makefile
     if ! grep -q "test-$SUBPROJECT:" "$ROOT_DIR/Makefile"; then

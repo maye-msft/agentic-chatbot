@@ -7,6 +7,7 @@ Welcome! You've just created a project from the Monorepo Python Template. Here's
 ### 1. Update Project Information
 
 Edit `README.md` and replace:
+
 - `# Project Name` with your actual project name
 - `[Your project description here]` with your project description
 - `[Your license here]` with your license choice
@@ -15,6 +16,7 @@ Edit `README.md` and replace:
 ### 2. Update Poetry Configuration
 
 Edit `pyproject.toml`:
+
 ```toml
 name = "your-project-name"
 description = "Your project description"
@@ -28,6 +30,7 @@ authors = ["Your Name <your.email@example.com>"]
 ```
 
 This will prompt you for:
+
 - Subproject name (e.g., `api`, `cli`, `core`)
 - Description
 - Whether to include tests (recommended: yes)
@@ -57,6 +60,7 @@ make test-all
 ## 🤖 VS Code Copilot
 
 Type these in Copilot chat:
+
 - `/monorepo-admin` - Natural language assistant
 - `/monorepo-intro` - Quick reference
 - `/monorepo-create-subproject` - Create subprojects

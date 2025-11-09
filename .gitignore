@@ -99,3 +99,7 @@ cython_debug/
 # macOS files
 .DS_Store
 poetry.lock
+
+# Log files
+logs/
+.tmp/

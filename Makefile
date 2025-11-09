@@ -18,3 +18,9 @@ test-all:
 	poetry run pytest .
 
 # Subproject-specific targets will be added by create_python_subproject.sh
+
+test-core:
+	poetry run pytest core/tests
+
+test-core-coverage:
+	poetry run pytest --disable-warnings --maxfail=1 --cov=core core/tests
